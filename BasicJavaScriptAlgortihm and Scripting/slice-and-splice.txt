@@ -1,0 +1,12 @@
+function frankenSplice(arr1, arr2, n) {
+
+ let a1=arr1
+ let a2=arr2
+ let d=[...arr2]
+let c=a1.map((e,i)=>{
+    d.splice(n++,0,e)
+ })
+  return d;
+}
+
+console.log(frankenSplice([1, 2, 3,], [4, 5, 6], 1));

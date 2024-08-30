@@ -1,0 +1,14 @@
+function getIndexToIns(arr, num) {
+  let a=[...arr].sort((a,b)=>a-b)
+  let b= a.indexOf(a.find(e=> e>=num ))
+  let c;
+  if(b==-1){
+    c=a.length;
+    return c
+  }
+
+ else{
+return b ;}
+}
+
+console.log(getIndexToIns([2, 5, 10], 15));

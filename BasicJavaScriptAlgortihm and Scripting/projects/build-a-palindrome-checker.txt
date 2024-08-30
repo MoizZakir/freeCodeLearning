@@ -1,0 +1,97 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='styles.css'>
+    <title>Palindrome Checker</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Is it a Palindrome?</h1>
+        <input type="text" id="text-input" placeholder="Enter text here">
+        <button id="check-btn">Check</button>
+        <div id="result"></div>
+    </div>
+    
+    
+</body>
+<script src="script.js"></script>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+ body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+** end of undefined **
+
+** start of undefined **
+
+
+const textInput = document.getElementById("text-input");
+const checkBtn = document.getElementById("check-btn");
+const result = document.getElementById("result");
+
+
+checkBtn.addEventListener("click", () => {
+  let text=textInput.value
+  const inputText = text.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (inputText === "") {
+    alert("Please input a value");
+  } else {
+    if (inputText === inputText.split("").reverse().join("")) {
+      result.textContent = `${text} is a palindrome`;
+    } else {
+      result.textContent = `${text} is not a palindrome`;
+    }
+  }
+});
+
+
+** end of undefined **
+

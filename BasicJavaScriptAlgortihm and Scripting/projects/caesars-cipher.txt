@@ -1,0 +1,30 @@
+function rot13(str) {
+    // Define the alphabet for ROT13 cipher
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const alphabetLength = alphabet.length;
+
+    // Create a function to shift a single character by 13 positions
+    function shiftChar(char) {
+        // Check if the character is a letter
+        if (alphabet.includes(char.toLowerCase())) {
+            // Determine the base index (lowercase or uppercase)
+            const base = char === char.toUpperCase() ? 'A' : 'a';
+            // Find the index of the character in the alphabet
+            const index = alphabet.indexOf(char.toLowerCase());
+            // Calculate the new index with wrapping
+            const newIndex = (index + 13) % alphabetLength;
+            // Return the shifted character with the original case
+            return alphabet[newIndex].toUpperCase() === char ? 
+                alphabet[newIndex].toUpperCase() : 
+                alphabet[newIndex];
+        } else {
+            // Return non-alphabet characters unchanged
+            return char;
+        }
+    }
+
+    // Apply ROT13 to each character in the string
+    return str.split('').map(shiftChar).join('').toUpperCase();
+}
+
+console.log(rot13("SERR PBQR PNZC"));
